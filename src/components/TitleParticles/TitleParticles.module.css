@@ -1,7 +1,6 @@
 .Container {
   width: 100%;
   height: 100vh;
-  background: rgb(var(--blue));
 }
 .ParticleContainer {
   width: 100%;
@@ -46,5 +45,14 @@
   }
   60% {
     transform: translateY(-10px);
+  }
+}
+@media (max-width: 650px) {
+  .TitleContainer {
+    width: 100%;
+    left: 0;
+  }
+  .TitleContainer h1 {
+    font-size: 35px;
   }
 }
