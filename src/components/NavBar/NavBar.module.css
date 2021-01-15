@@ -1,0 +1,67 @@
+.NavBar {
+  background: rgb(36, 42, 54, 0.95);
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+.Link {
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  transition: 200ms;
+}
+.Link:hover {
+  color: rgb(var(--lightBlue));
+}
+.NameIcon {
+  position: relative;
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.NameIcon::before,
+.NameIcon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -1.2px;
+  left: -1.2px;
+  border-radius: 100%;
+}
+.NameIcon::before {
+  border: 1.2px solid transparent;
+}
+.NameIcon::after {
+  border: 1.2px solid transparent;
+}
+.NameIcon:hover::before {
+  border-top-color: rgb(var(--lightBlue));
+  border-right-color: rgb(var(--lightBlue));
+  border-bottom-color: rgb(var(--lightBlue));
+  transition: border-top-color 75ms linear, border-right-color 75ms linear 50ms, border-bottom-color 75ms linear 100ms;
+}
+.NameIcon:hover::after {
+  border-top: 1.2px solid rgb(var(--lightBlue));
+  border-left-width: 1.2px;
+  border-right-width: 1.2px;
+  transform: rotate(270deg);
+  transition: transform 300ms linear 0ms, border-left-width 0ms linear 262.5ms;
+}
+.NameIcon:hover {
+  color: rgb(var(--lightBlue));
+  transition: color 300ms ease-in 300ms;
+}
