@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './TitleParticles.module.css';
 import Particles from 'react-particles-js';
 import { chevronIcon } from '../icons';
+import PropTypes from 'prop-types';
 
 const particleParams = {
   interactivity: {
@@ -24,17 +25,19 @@ const particleParams = {
   }
 };
 
-const TitleParticles = props => {
-  return (
-    <div className={classes.Container}>
-      <Particles className={classes.ParticleContainer} params={particleParams} />
-      <div className={classes.TitleContainer}>
-        <h1 className={classes.Title}>Brennan Wilkins</h1>
-        <h1 className={classes.SubTitle}>Full Stack Software Developer</h1>
-        <div className={classes.DownIcon} onClick={() => props.scroll('Skills')}>{chevronIcon}</div>
-      </div>
+const TitleParticles = props => (
+  <div className={classes.Container}>
+    <Particles className={classes.ParticleContainer} params={particleParams} />
+    <div className={classes.TitleContainer}>
+      <h1 className={classes.Title}>Brennan Wilkins</h1>
+      <h1 className={classes.SubTitle}>Full Stack Software Developer</h1>
+      <div className={classes.DownIcon} onClick={() => props.scroll('Skills')}>{chevronIcon}</div>
     </div>
-  );
+  </div>
+);
+
+TitleParticles.propTypes = {
+  scroll: PropTypes.func.isRequired
 };
 
 export default TitleParticles;
