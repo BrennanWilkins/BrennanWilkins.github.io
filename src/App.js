@@ -9,11 +9,16 @@ const App = () => {
   const skillsRef = useRef();
   const projRef = useRef();
   const contactRef = useRef();
-  const [startAnim, setStartAnim] = useState(false);
+  const [startSkillsAnim, setStartSkillsAnim] = useState(false);
+  const [startContactAnim, setStartContactAnim] = useState(false);
 
   const scrollHandler = () => {
-    if (document.documentElement.scrollTop >= skillsRef.current.getBoundingClientRect().top / 2) {
-      setStartAnim(true);
+    const scrollTop = document.documentElement.scrollTop;
+    if (!startSkillsAnim && scrollTop >= skillsRef.current.getBoundingClientRect().top / 2) {
+      setStartSkillsAnim(true);
+    }
+    if (scrollTop >= contactRef.current.getBoundingClientRect().top - 100) {
+      setStartContactAnim(true);
       document.removeEventListener('scroll', scrollHandler);
     }
   };
@@ -42,9 +47,9 @@ const App = () => {
     <div>
       <NavBar scroll={manualScrollHandler} />
       <TitleParticles scroll={manualScrollHandler} />
-      <Skills ref={skillsRef} startAnim={startAnim} />
+      <Skills ref={skillsRef} startAnim={startSkillsAnim} />
       <Projects ref={projRef} />
-      <Contact ref={contactRef} />
+      <Contact ref={contactRef} startAnim={startContactAnim} />
     </div>
   );
 };

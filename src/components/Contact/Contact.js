@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import classes from './Contact.module.css';
+import PropTypes from 'prop-types';
 
 const emailTest = (
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -37,7 +38,7 @@ const Contact = React.forwardRef((props, ref) => {
   return (
     <div className={classes.Container} ref={ref}>
       <h1>Contact</h1>
-      <form className={classes.Form} onSubmit={submitHandler}>
+      <form className={`${classes.Form} ${props.startAnim ? classes.AnimateForm : ''}`} onSubmit={submitHandler}>
         <div className={classes.InputSection}>
           <div className={classes.InputDiv}>
             <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" spellCheck="false" />
@@ -64,5 +65,9 @@ const Contact = React.forwardRef((props, ref) => {
     </div>
   );
 });
+
+Contact.propTypes = {
+  startAnim: PropTypes.bool.isRequired
+};
 
 export default Contact;
