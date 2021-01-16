@@ -22,7 +22,13 @@ const particleParams = {
       grab: { distance: 200 },
       push: { quantity: 4 }
     }
-  }
+  },
+  particles: {
+    number: {
+      value: 80
+    }
+  },
+  detectRetina: true
 };
 
 const TitleParticles = props => (
