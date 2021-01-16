@@ -3,7 +3,9 @@ body {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(var(--blue));
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-image: linear-gradient(rgb(var(--blue)), rgb(var(--darkBlue)));
 }
 h1 {
   font-size: 40px;
@@ -14,5 +16,6 @@ h1 {
 :root {
   --lightBlue: 21, 171, 210;
   --blue: 0, 61, 122;
-  --darkBlue: 36, 42, 54;
+  --darkBlue: 61, 61, 68;
+  --darkerBlue: 36, 42, 54;
 }

@@ -7,7 +7,7 @@ const icons = [[htmlIcon, 'HTML'], [cssIcon, 'CSS3'], [jsIcon, 'JavaScript'], [r
 [reduxIcon, 'Redux'], [gitIcon, 'git'], [nodeJSIcon, 'Node.js'], [mongoDBIcon, 'MongoDB']];
 
 const Skills = React.forwardRef((props, ref) => (
-  <div ref={ref}>
+  <div className={classes.Container} ref={ref}>
     <h1>Technologies I use</h1>
     <div className={`${classes.Techs} ${props.startAnim ? classes.TechsAnim : ''}`}>
       {icons.map((icon, i) => (

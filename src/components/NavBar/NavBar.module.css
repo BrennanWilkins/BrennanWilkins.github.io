@@ -1,5 +1,5 @@
 .NavBar {
-  background: rgba(var(--darkBlue), 0.95);
+  background: rgba(var(--darkerBlue), 0.9);
   position: fixed;
   width: 100%;
   height: 70px;
