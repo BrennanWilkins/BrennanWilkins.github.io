@@ -5,7 +5,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: rgb(var(--blue));
 }
-
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
 :root {
   --lightBlue: 21, 171, 210;
   --blue: 0, 61, 122;

@@ -1,0 +1,84 @@
+.Techs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+  max-width: 1000px;
+}
+.Tech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 300ms;
+}
+.Tech:hover {
+  transform: scale(1.1);
+}
+.TechName {
+  position: absolute;
+  visibility: hidden;
+  bottom: -15px;
+  opacity: 0;
+  transition: all 300ms;
+  color: rgb(21, 171, 210);
+  font-weight: bold;
+}
+.Tech:hover .FocusBorder {
+  width: 100%;
+  left: 0;
+  opacity: 1;
+}
+.FocusBorder {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: rgb(21, 171, 210);
+  transition: 400ms;
+  opacity: 0;
+}
+.Tech:hover .TechName {
+  visibility: visible;
+  opacity: 1;
+}
+.TechIcon {
+  width: 130px;
+  height: 130px;
+  opacity: 0;
+  position: relative;
+  right: -10px;
+  transition: all 250ms 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px;
+}
+.TechIconStretch {
+  width: 220px;
+}
+.TechsAnim .TechIcon {
+  opacity: 1;
+  right: 0;
+  transition: all 250ms;
+}
+@media (max-width: 875px) {
+  .Techs {
+    width: 100%;
+    max-width: 600px;
+  }
+  .TechName {
+    font-size: 15px;
+  }
+  .TechIcon {
+    margin: 15px 10px;
+    width: 100px;
+    height: 100px;
+  }
+  .TechIconStretch {
+    width: 180px;
+  }
+}
