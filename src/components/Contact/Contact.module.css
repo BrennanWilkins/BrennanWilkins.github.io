@@ -1,0 +1,91 @@
+.Container {
+  padding: 20px 0;
+}
+.Form {
+  margin: 20px auto;
+  max-width: 500px;
+  width: 90%;
+  padding: 0 -5px;
+}
+.Form input::placeholder, .Form textarea::placeholder {
+  color: rgb(138,138,138);
+}
+.Form input, .Form textarea {
+  background: rgb(43, 43, 43);
+  color: rgb(175,175,175);
+  border: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  margin: 5px;
+  box-shadow: 0 0 10px 0 rgb(35,35,35) inset;
+}
+.Form input {
+  height: 50px;
+  padding: 0 20px;
+}
+.Form textarea {
+  padding: 10px 20px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  resize: vertical;
+}
+.InputSection {
+  display: flex;
+  justify-content: space-between;
+}
+.InputDiv {
+  position: relative;
+}
+.Form input:focus ~ .FocusBorder, .Form textarea:focus ~ .FocusBorder {
+  width: 100%;
+  opacity: 1;
+}
+.FocusBorder {
+  position: absolute;
+  bottom: 4px;
+  left: 5px;
+  width: 0;
+  height: 2px;
+  background: rgb(var(--lightBlue));
+  transition: 300ms;
+  opacity: 0;
+}
+.Form textarea ~ .FocusBorder {
+  bottom: 8px;
+}
+.SubmitBtn {
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px;
+  background: rgb(43, 43, 43);
+  cursor: pointer;
+  border: 2px solid rgb(var(--lightBlue));
+  color: rgb(var(--lightBlue));
+  border-radius: 4px;
+  transition: 250ms;
+}
+.SubmitBtn:hover {
+  border: 2px solid rgb(44, 205, 246);
+  color: rgb(44, 205, 246);
+  background: rgb(55,55,55);
+}
+.SubmitContainer {
+  position: relative;
+}
+.ErrMsg, .HideErrMsg {
+  position: absolute;
+  top: 7.5px;
+  right: -5px;
+  color: white;
+  font-size: 15px;
+  background: rgb(184, 4, 4);
+  border-radius: 4px;
+  padding: 10px;
+  transition: 300ms;
+}
+.HideErrMsg {
+  opacity: 0;
+  visibility: hidden;
+}
