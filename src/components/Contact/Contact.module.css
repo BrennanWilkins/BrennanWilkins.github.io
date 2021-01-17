@@ -35,6 +35,7 @@
   outline: none;
   margin: 5px;
   box-shadow: 0 0 10px 0 rgb(35,35,35) inset;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .Form input {
   height: 50px;
@@ -42,7 +43,6 @@
 }
 .Form textarea {
   padding: 10px 20px;
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   resize: vertical;
 }
 .InputSection {
@@ -72,7 +72,7 @@
 .SubmitBtn {
   opacity: 0;
   outline: none;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 16px;
   margin: 5px;
   background: rgb(43, 43, 43);
@@ -87,10 +87,15 @@
   color: rgb(44, 205, 246);
   background: rgb(55,55,55);
 }
+.SubmitBtn:disabled {
+  border: 2px solid rgb(50,50,50);
+  color: rgb(100,100,100);
+  background: rgb(50,50,50);
+}
 .SubmitContainer {
   position: relative;
 }
-.ErrMsg, .HideErrMsg {
+.ErrMsg, .HideMsg, .SuccessMsg {
   position: absolute;
   top: 7.5px;
   right: -5px;
@@ -101,7 +106,10 @@
   padding: 10px;
   transition: 300ms;
 }
-.HideErrMsg {
+.HideMsg {
   opacity: 0;
   visibility: hidden;
+}
+.SuccessMsg {
+  background: rgb(16, 170, 3);
 }
