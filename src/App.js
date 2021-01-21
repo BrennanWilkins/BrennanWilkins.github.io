@@ -17,7 +17,7 @@ const App = () => {
     if (!startSkillsAnim && scrollTop >= skillsRef.current.getBoundingClientRect().top / 2) {
       setStartSkillsAnim(true);
     }
-    if (scrollTop >= contactRef.current.getBoundingClientRect().top - 100) {
+    if (scrollTop >= contactRef.current.getBoundingClientRect().top - 50) {
       setStartContactAnim(true);
       document.removeEventListener('scroll', scrollHandler);
     }

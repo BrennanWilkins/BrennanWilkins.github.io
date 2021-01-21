@@ -16,7 +16,9 @@ export const breyo = {
     'Utilizes socket.IO to send real-time updates to other users connected to the same board.',
     'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
     'RESTful API created using Node.js with Express.js, connecting to a MongoDB database.'
-  ]
+  ],
+  siteLink: 'https://breyo.herokuapp.com',
+  ghLink: 'https://github.com/BrennanWilkins/breyo'
 };
 
 export const simplify = {
@@ -33,7 +35,9 @@ export const simplify = {
     'Combines data from 5+ APIs to provide real-time stock and cryptocurrency prices, financial news, stock analyses, and historical data.',
     'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
     'RESTful API created using Node.js with Express.js, connecting to a MongoDB database.'
-  ]
+  ],
+  siteLink: 'https://www.simplify-finance.com',
+  ghLink: 'https://github.com/BrennanWilkins/Simplify'
 };
 
 export const guitarTrainer = {
@@ -50,7 +54,9 @@ export const guitarTrainer = {
     'Provides customized practice and daily goals based on your tracked stats',
     'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
     'RESTful API created using Node.js with Express.js, connecting to a MongoDB database.'
-  ]
+  ],
+  siteLink: 'https://guitar-trainer.herokuapp.com',
+  ghLink: 'https://github.com/BrennanWilkins/guitarTrainer'
 };
 
 export const notely = {
@@ -66,7 +72,9 @@ export const notely = {
     'Note taking and productivity app inspired by Evernote',
     'Tracks your notes and notebooks, with searching/sorting, several productivity tools, and a rich text editor',
     'Front end built with React, with a RESTful API created using Node.js/MongoDB.'
-  ]
+  ],
+  siteLink: 'https://notely-app.herokuapp.com',
+  ghLink: 'https://github.com/BrennanWilkins/Notely'
 };
 
 export const pvn = {
@@ -80,5 +88,7 @@ export const pvn = {
     'Supports single and multiplayer with an AI with a customizable difficulty setting',
     'Created on a team of three using HTML, CSS, and JavaScript (Phaser3 engine)',
     'Received a scholarship from the Longhorn Creators Foundation for its complexity and creativity'
-  ]
+  ],
+  siteLink: 'https://brennanwilkins.github.io/piratesvsninjas/',
+  ghLink: 'https://github.com/BrennanWilkins/piratesvsninjas'
 };

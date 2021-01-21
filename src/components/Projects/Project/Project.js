@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Project.module.css';
 import PropTypes from 'prop-types';
+import { SiteLink, GHLink } from '../ProjectLinks/ProjectLinks';
 
 const Project = props => {
   return (
@@ -16,6 +17,10 @@ const Project = props => {
         <div className={classes.Icons}>
           {props.icons.map((icon, i) => <span key={i}>{icon}</span>)}
         </div>
+        <div className={classes.Links}>
+          <SiteLink href={props.siteLink} />
+          <GHLink href={props.ghLink} />
+        </div>
       </div>
     </div>
   );
@@ -25,7 +30,9 @@ Project.propTypes = {
   pic: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   text: PropTypes.array.isRequired,
-  icons: PropTypes.array.isRequired
+  icons: PropTypes.array.isRequired,
+  siteLink: PropTypes.string.isRequired,
+  ghLink: PropTypes.string.isRequired
 };
 
 export default Project;

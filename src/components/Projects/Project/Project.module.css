@@ -64,3 +64,10 @@
   color: rgb(var(--lightBlue));
   transform: scale(1.1);
 }
+.Links {
+  margin: 15px 0 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
