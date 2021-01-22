@@ -6,7 +6,7 @@ import { SiteLink, GHLink } from '../ProjectLinks/ProjectLinks';
 const Project = props => {
   return (
     <div className={classes.Project}>
-      <div className={classes.Img}>
+      <div className={classes.Img} onClick={props.toggleSlideShow}>
         <img src={props.pic} alt={props.alt} />
         <div className={classes.Overlay}>View slide show</div>
       </div>
@@ -34,7 +34,8 @@ Project.propTypes = {
   icons: PropTypes.array.isRequired,
   siteLink: PropTypes.string.isRequired,
   ghLink: PropTypes.string.isRequired,
-  title: PropTypes.object.isRequired
+  title: PropTypes.object.isRequired,
+  toggleSlideShow: PropTypes.func.isRequired
 };
 
 export default Project;
