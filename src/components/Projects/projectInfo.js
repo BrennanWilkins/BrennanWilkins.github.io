@@ -1,4 +1,5 @@
 import { htmlIcon, cssIcon, jsIcon, reactIcon, reduxIcon, socketIOIcon, nodeJSIcon, mongoDBIcon } from './smallIcons';
+import * as titles from './ProjectTitles/ProjectTitles';
 
 export const breyo = {
   icons: [
@@ -15,10 +16,11 @@ export const breyo = {
     `Offers features like tracking of board member activity, member permissions and admins, Gantt charts, and more.`,
     'Utilizes socket.IO to send real-time updates to other users connected to the same board.',
     'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
-    'RESTful API created using Node.js with Express.js, connecting to a MongoDB database.'
+    'RESTful API created using Node.js and MongoDB.'
   ],
   siteLink: 'https://breyo.herokuapp.com',
-  ghLink: 'https://github.com/BrennanWilkins/breyo'
+  ghLink: 'https://github.com/BrennanWilkins/breyo',
+  title: titles.BreyoTitle
 };
 
 export const simplify = {
@@ -34,10 +36,11 @@ export const simplify = {
     'Helps users organize and simplify their finances by tracking their budget, goals, investments, and net worth, and providing financial visualization tools.',
     'Combines data from 5+ APIs to provide real-time stock and cryptocurrency prices, financial news, stock analyses, and historical data.',
     'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
-    'RESTful API created using Node.js with Express.js, connecting to a MongoDB database.'
+    'RESTful API created using Node.js and MongoDB.'
   ],
   siteLink: 'https://www.simplify-finance.com',
-  ghLink: 'https://github.com/BrennanWilkins/Simplify'
+  ghLink: 'https://github.com/BrennanWilkins/Simplify',
+  title: titles.SimplifyTitle
 };
 
 export const guitarTrainer = {
@@ -53,10 +56,11 @@ export const guitarTrainer = {
     'Helps you learn guitar with three game modes designed to improve note, chord, and interval identification',
     'Provides customized practice and daily goals based on your tracked stats',
     'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
-    'RESTful API created using Node.js with Express.js, connecting to a MongoDB database.'
+    'RESTful API created using Node.js and MongoDB.'
   ],
   siteLink: 'https://guitar-trainer.herokuapp.com',
-  ghLink: 'https://github.com/BrennanWilkins/guitarTrainer'
+  ghLink: 'https://github.com/BrennanWilkins/guitarTrainer',
+  title: titles.GuitarTitle
 };
 
 export const notely = {
@@ -74,7 +78,8 @@ export const notely = {
     'Front end built with React, with a RESTful API created using Node.js/MongoDB.'
   ],
   siteLink: 'https://notely-app.herokuapp.com',
-  ghLink: 'https://github.com/BrennanWilkins/Notely'
+  ghLink: 'https://github.com/BrennanWilkins/Notely',
+  title: titles.NotelyTitle
 };
 
 export const pvn = {
@@ -90,5 +95,6 @@ export const pvn = {
     'Received a scholarship from the Longhorn Creators Foundation for its complexity and creativity'
   ],
   siteLink: 'https://brennanwilkins.github.io/piratesvsninjas/',
-  ghLink: 'https://github.com/BrennanWilkins/piratesvsninjas'
+  ghLink: 'https://github.com/BrennanWilkins/piratesvsninjas',
+  title: titles.PVNTitle
 };

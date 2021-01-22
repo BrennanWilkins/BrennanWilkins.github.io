@@ -11,6 +11,7 @@ const Project = props => {
         <div className={classes.Overlay}>View slide show</div>
       </div>
       <div className={classes.ProjectInfo}>
+        <div className={classes.Title}>{props.title}</div>
         <div className={classes.InfoText}>
           {props.text.map((text, i) => <p key={i}>{text}</p>)}
         </div>
@@ -32,7 +33,8 @@ Project.propTypes = {
   text: PropTypes.array.isRequired,
   icons: PropTypes.array.isRequired,
   siteLink: PropTypes.string.isRequired,
-  ghLink: PropTypes.string.isRequired
+  ghLink: PropTypes.string.isRequired,
+  title: PropTypes.object.isRequired
 };
 
 export default Project;

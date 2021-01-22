@@ -1,0 +1,109 @@
+.Title {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 25px;
+}
+.SimplifyTitle {
+  margin-bottom: 15px;
+}
+.SimplifyTitle:hover .Bar1 {
+  background: rgb(32, 208, 185);
+  transition: background 300ms;
+}
+.SimplifyTitle:hover .Bar2 {
+  background: rgb(32, 208, 185, 0.8);
+  transition: background 300ms 50ms;
+}
+.SimplifyTitle:hover .Bar3 {
+  background: rgb(32, 208, 185, 0.6);
+  transition: background 300ms 100ms;
+}
+.SimplifyTitle:hover .Bar4 {
+  background: rgb(32, 208, 185, 0.4);
+  transition: background 300ms 150ms;
+}
+.SimplifyText {
+  background: linear-gradient(to right, rgb(18, 152, 189), rgb(26, 171, 152));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 5px;
+}
+.Bars {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.Bars div {
+  width: 13px;
+  border-radius: 2px;
+}
+.Bar1 {
+  height: 25px;
+  background: rgb(18, 152, 189);
+  transition: background 300ms 150ms;
+}
+.Bar2 {
+  height: 30px;
+  background: rgb(18, 152, 189, 0.8);
+  transition: background 300ms 100ms;
+}
+.Bar3 {
+  height: 40px;
+  background: rgb(18, 152, 189, 0.6);
+  transition: background 300ms 50ms;
+}
+.Bar4 {
+  height: 50px;
+  background: rgb(18, 152, 189, 0.4);
+  transition: background 300ms;
+}
+
+.GuitarTitle {
+  color: rgb(1,25,54);
+}
+.GuitarTitle svg {
+  width: 42px;
+  height: 42px;
+  transform: rotate(45deg);
+  position: relative;
+  top: -2px;
+  right: -5px;
+}
+
+.NotelyTitle {
+  color: rgb(104, 136, 252);
+}
+
+.PVNTitle {
+  color: rgb(156, 69, 10);
+}
+
+.BreyoTitle {
+  color: rgb(228, 67, 50);
+}
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Section svg {
+  font-size: 9px;
+}
+.Block {
+  border: 1.2px solid rgb(228, 67, 50);
+  border-radius: 4px;
+  width: 20px;
+  height: 3px;
+  margin: 1.5px 4px 1.5px 3px;
+}
