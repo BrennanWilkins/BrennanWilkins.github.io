@@ -1,7 +1,12 @@
 import { htmlIcon, cssIcon, jsIcon, reactIcon, reduxIcon, socketIOIcon, nodeJSIcon, mongoDBIcon } from './smallIcons';
 import * as titles from './ProjectTitles/ProjectTitles';
+import breyoPic from '../../assets/imgs/breyoPic.png';
+import simplifyPic from '../../assets/imgs/simplifyPic.png';
+import notelyPic from '../../assets/imgs/notelyPic.png';
+import guitarPic from '../../assets/imgs/guitarPic.png';
+import pvnPic from '../../assets/imgs/pvnPic.png';
 
-export const breyo = {
+const breyo = {
   icons: [
     jsIcon,
     cssIcon,
@@ -20,10 +25,12 @@ export const breyo = {
   ],
   siteLink: 'https://breyo.herokuapp.com',
   ghLink: 'https://github.com/BrennanWilkins/breyo',
-  title: titles.BreyoTitle
+  title: titles.BreyoTitle,
+  pic: breyoPic,
+  alt: 'Breyo'
 };
 
-export const simplify = {
+const simplify = {
   icons: [
     jsIcon,
     cssIcon,
@@ -40,10 +47,12 @@ export const simplify = {
   ],
   siteLink: 'https://www.simplify-finance.com',
   ghLink: 'https://github.com/BrennanWilkins/Simplify',
-  title: titles.SimplifyTitle
+  title: titles.SimplifyTitle,
+  pic: simplifyPic,
+  alt: 'Simplify'
 };
 
-export const guitarTrainer = {
+const guitarTrainer = {
   icons: [
     jsIcon,
     cssIcon,
@@ -60,10 +69,12 @@ export const guitarTrainer = {
   ],
   siteLink: 'https://guitar-trainer.herokuapp.com',
   ghLink: 'https://github.com/BrennanWilkins/guitarTrainer',
-  title: titles.GuitarTitle
+  title: titles.GuitarTitle,
+  pic: guitarPic,
+  alt: 'Guitar Trainer'
 };
 
-export const notely = {
+const notely = {
   icons: [
     jsIcon,
     cssIcon,
@@ -79,10 +90,12 @@ export const notely = {
   ],
   siteLink: 'https://notely-app.herokuapp.com',
   ghLink: 'https://github.com/BrennanWilkins/Notely',
-  title: titles.NotelyTitle
+  title: titles.NotelyTitle,
+  pic: notelyPic,
+  alt: 'Notely'
 };
 
-export const pvn = {
+const pvn = {
   icons: [
     htmlIcon,
     cssIcon,
@@ -96,5 +109,11 @@ export const pvn = {
   ],
   siteLink: 'https://brennanwilkins.github.io/piratesvsninjas/',
   ghLink: 'https://github.com/BrennanWilkins/piratesvsninjas',
-  title: titles.PVNTitle
+  title: titles.PVNTitle,
+  pic: pvnPic,
+  alt: 'PvN Strategy Game'
 };
+
+const projects = [breyo, simplify, guitarTrainer, notely, pvn];
+
+export default projects;
