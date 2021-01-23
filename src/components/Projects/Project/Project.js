@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { SiteLink, GHLink } from '../ProjectLinks/ProjectLinks';
 
 const Project = React.forwardRef((props, ref) => (
-  <div ref={ref} className={classes.Project}>
+  <div ref={ref} className={`${classes.Project} ${props.startAnim ? classes.ProjectAnim : ''}`}>
     <div className={classes.Img} onClick={props.toggleSlideShow}>
       <img src={props.pic} alt={props.alt} />
       <div className={classes.Overlay}>View slide show</div>
@@ -33,7 +33,8 @@ Project.propTypes = {
   siteLink: PropTypes.string.isRequired,
   ghLink: PropTypes.string.isRequired,
   title: PropTypes.object.isRequired,
-  toggleSlideShow: PropTypes.func.isRequired
+  toggleSlideShow: PropTypes.func.isRequired,
+  startAnim: PropTypes.bool.isRequired
 };
 
 export default Project;
