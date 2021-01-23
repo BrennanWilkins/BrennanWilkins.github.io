@@ -1,3 +1,6 @@
+import breyoGif1 from '../../assets/gifs/breyoGif1.gif';
+import breyoGif2 from '../../assets/gifs/breyoGif1.gif';
+import breyoGif3 from '../../assets/gifs/breyoGif1.gif';
 import simplifyGif1 from '../../assets/gifs/simplifyGif1.gif';
 import simplifyGif2 from '../../assets/gifs/simplifyGif2.gif';
 import simplifyGif3 from '../../assets/gifs/simplifyGif3.gif';
@@ -13,6 +16,7 @@ import pvnGif1 from '../../assets/gifs/pvnGif1.gif';
 import pvnGif2 from '../../assets/gifs/pvnGif2.gif';
 
 const gifs = {
+  'Breyo': [breyoGif1, breyoGif2, breyoGif3],
   'Simplify': [simplifyGif1, simplifyGif2, simplifyGif3, simplifyGif4, simplifyGif5],
   'Guitar Trainer': [guitarGif1, guitarGif2, guitarGif3],
   'Notely': [notelyGif1, notelyGif2, notelyGif3],
