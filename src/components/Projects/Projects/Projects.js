@@ -10,25 +10,25 @@ const Projects = React.forwardRef((props, containerRef) => {
   const [startAnims, setStartAnims] = useState({});
   const projRefs = useRef([]);
 
-  const scrollHandler = () => {
-    setStartAnims(anims => {
-      let newAnims = anims;
-      for (let i = 0; i < projRefs.current.length; i++) {
-        const projRect = projRefs.current[i].getBoundingClientRect();
-        // if project starting to be shown in viewport for first time then start animation
-        if (projRect.top + projRect.height / 8 <= window.innerHeight && !newAnims[i]) {
-          newAnims = { ...anims, [i]: true };
-          // if all projects animated then remove scroll listener
-          if (Object.keys(newAnims).length === projRefs.current.length) {
-            document.removeEventListener('scroll', scrollHandler);
+  useEffect(() => {
+    const scrollHandler = () => {
+      setStartAnims(anims => {
+        let newAnims = anims;
+        for (let i = 0; i < projRefs.current.length; i++) {
+          const projRect = projRefs.current[i].getBoundingClientRect();
+          // if project starting to be shown in viewport for first time then start animation
+          if (projRect.top + projRect.height / 8 <= window.innerHeight && !newAnims[i]) {
+            newAnims = { ...anims, [i]: true };
+            // if all projects animated then remove scroll listener
+            if (Object.keys(newAnims).length === projRefs.current.length) {
+              document.removeEventListener('scroll', scrollHandler);
+            }
           }
         }
-      }
-      return newAnims;
-    });
-  };
+        return newAnims;
+      });
+    };
 
-  useEffect(() => {
     document.addEventListener('scroll', scrollHandler);
     return () => document.removeEventListener('scroll', scrollHandler);
   }, []);

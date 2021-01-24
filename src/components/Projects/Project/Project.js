@@ -6,6 +6,7 @@ import { SiteLink, GHLink } from '../ProjectLinks/ProjectLinks';
 const Project = React.forwardRef((props, ref) => {
   const projectContent = useMemo(() => (
     <>
+      <div className={classes.TopTitle}>{props.title}</div>
       <div className={classes.Img} onClick={props.toggleSlideShow}>
         <img src={props.pic} alt={props.alt} />
         <div className={classes.Overlay}>View slide show</div>

@@ -77,11 +77,14 @@
   justify-content: center;
   align-items: center;
 }
-.Title {
+.Title, .TopTitle {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.TopTitle {
+  display: none;
 }
 @media (max-width: 1050px) {
   .Project {
@@ -106,9 +109,10 @@
     max-width: 450px;
   }
   .Title {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
+  }
+  .TopTitle {
+    display: flex;
   }
 }
 @media (max-width: 400px) {

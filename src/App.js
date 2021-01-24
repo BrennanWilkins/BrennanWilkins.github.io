@@ -12,20 +12,19 @@ const App = () => {
   const [startSkillsAnim, setStartSkillsAnim] = useState(false);
   const [startContactAnim, setStartContactAnim] = useState(false);
 
-  const scrollHandler = () => {
-    if (!startSkillsAnim) {
-      const skillsRect = skillsRef.current.getBoundingClientRect();
-      if (window.innerHeight >= skillsRect.bottom - 40 || skillsRect.top <= 70) {
-        setStartSkillsAnim(true);
-      }
-    }
-    if (window.innerHeight >= contactRef.current.getBoundingClientRect().bottom - 100) {
-      setStartContactAnim(true);
-      document.removeEventListener('scroll', scrollHandler);
-    }
-  };
-
   useEffect(() => {
+    const scrollHandler = () => {
+      setStartSkillsAnim(hasStarted => {
+        if (hasStarted) { return hasStarted; }
+        const skillsRect = skillsRef.current.getBoundingClientRect();
+        return window.innerHeight >= skillsRect.bottom - 40 || skillsRect.top <= 70;
+      });
+      if (window.innerHeight >= contactRef.current.getBoundingClientRect().bottom - 100) {
+        setStartContactAnim(true);
+        document.removeEventListener('scroll', scrollHandler);
+      }
+    };
+
     document.addEventListener('scroll', scrollHandler);
     return () => document.removeEventListener('scroll', scrollHandler);
   }, []);
