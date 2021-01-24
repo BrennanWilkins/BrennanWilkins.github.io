@@ -13,11 +13,10 @@ const App = () => {
   const [startContactAnim, setStartContactAnim] = useState(false);
 
   const scrollHandler = () => {
-    const scrollTop = document.documentElement.scrollTop;
-    if (!startSkillsAnim && scrollTop >= skillsRef.current.getBoundingClientRect().top / 2) {
+    if (!startSkillsAnim && window.innerHeight >= skillsRef.current.getBoundingClientRect().bottom - 40) {
       setStartSkillsAnim(true);
     }
-    if (scrollTop >= contactRef.current.getBoundingClientRect().top - 50) {
+    if (window.innerHeight >= contactRef.current.getBoundingClientRect().bottom - 100) {
       setStartContactAnim(true);
       document.removeEventListener('scroll', scrollHandler);
     }

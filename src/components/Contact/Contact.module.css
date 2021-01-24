@@ -52,6 +52,9 @@
 .InputDiv {
   position: relative;
 }
+.NameInput {
+  margin-right: 10px;
+}
 .Form input:focus ~ .FocusBorder, .Form textarea:focus ~ .FocusBorder {
   width: 100%;
   opacity: 1;

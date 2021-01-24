@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useRef, useEffect } from 'react';
+import React, { useState, Suspense, useRef, useEffect, useMemo } from 'react';
 import classes from './Projects.module.css';
 import Project from '../Project/Project';
 import projInfo from '../projectInfo';
@@ -11,19 +11,21 @@ const Projects = React.forwardRef((props, containerRef) => {
   const projRefs = useRef([]);
 
   const scrollHandler = () => {
-    let totComplete = 0;
-    for (let i = 0; i < projRefs.current.length; i++) {
-      let projRect = projRefs.current[i].getBoundingClientRect();
-      // if project starting to be shown in viewport for first time then start animation
-      if (projRect.top + projRect.height / 8 <= window.innerHeight && !startAnims[i]) {
-        totComplete++;
-        setStartAnims(prev => ({ ...prev, [i]: true }));
+    setStartAnims(anims => {
+      let newAnims = anims;
+      for (let i = 0; i < projRefs.current.length; i++) {
+        const projRect = projRefs.current[i].getBoundingClientRect();
+        // if project starting to be shown in viewport for first time then start animation
+        if (projRect.top + projRect.height / 8 <= window.innerHeight && !newAnims[i]) {
+          newAnims = { ...anims, [i]: true };
+          // if all projects animated then remove scroll listener
+          if (Object.keys(newAnims).length === projRefs.current.length) {
+            document.removeEventListener('scroll', scrollHandler);
+          }
+        }
       }
-    }
-    // if all projects animated then remove scroll listener
-    if (totComplete === projRefs.current.length) {
-      document.removeEventListener('scroll', scrollHandler);
-    }
+      return newAnims;
+    });
   };
 
   useEffect(() => {
@@ -31,14 +33,18 @@ const Projects = React.forwardRef((props, containerRef) => {
     return () => document.removeEventListener('scroll', scrollHandler);
   }, []);
 
+  const projects = useMemo(() => (
+    projInfo.map((info, i) => (
+      <Project key={info.alt} ref={el => projRefs.current[i] = el} {...info}
+      toggleSlideShow={() => setSlideShowProject(info.alt)} startAnim={!!startAnims[i]} />
+    ))
+  ), [startAnims]);
+
   return (
     <>
       <div ref={containerRef} className={classes.Container}>
         <h1>Projects</h1>
-        {projInfo.map((info, i) => (
-          <Project key={info.alt} ref={el => projRefs.current[i] = el} {...info}
-          toggleSlideShow={() => setSlideShowProject(info.alt)} startAnim={!!startAnims[i]} />
-        ))}
+        {projects}
       </div>
       {slideShowProject && <Suspense fallback={<Fallback />}><SlideShowModal projectTitle={slideShowProject} close={() => setSlideShowProject('')} /></Suspense>}
     </>

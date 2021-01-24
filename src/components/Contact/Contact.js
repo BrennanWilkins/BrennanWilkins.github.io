@@ -73,7 +73,7 @@ const Contact = React.forwardRef((props, ref) => {
       <h1>Contact</h1>
       <form className={`${classes.Form} ${props.startAnim ? classes.AnimateForm : ''}`} onSubmit={submitHandler}>
         <div className={classes.InputSection}>
-          <div className={classes.InputDiv}>
+          <div className={`${classes.InputDiv} ${classes.NameInput}`}>
             <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" spellCheck="false" disabled={loading} />
             <div className={classes.FocusBorder}></div>
           </div>
