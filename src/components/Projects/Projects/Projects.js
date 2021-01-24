@@ -6,7 +6,7 @@ import Fallback from '../LoadingFallback/LoadingFallback';
 const SlideShowModal = React.lazy(() => import('../SlideShowModal/SlideShowModal'));
 
 const Projects = React.forwardRef((props, containerRef) => {
-  const [slideShowProject, setSlideShowProject] = useState('');
+  const [slideShowProject, setSlideShowProject] = useState(null);
   const [startAnims, setStartAnims] = useState({});
   const projRefs = useRef([]);
 
@@ -36,7 +36,7 @@ const Projects = React.forwardRef((props, containerRef) => {
   const projects = useMemo(() => (
     projInfo.map((info, i) => (
       <Project key={info.alt} ref={el => projRefs.current[i] = el} {...info}
-      toggleSlideShow={() => setSlideShowProject(info.alt)} startAnim={!!startAnims[i]} />
+      toggleSlideShow={() => setSlideShowProject({ title: info.alt, titleComp: info.title })} startAnim={!!startAnims[i]} />
     ))
   ), [startAnims]);
 
@@ -46,7 +46,7 @@ const Projects = React.forwardRef((props, containerRef) => {
         <h1>Projects</h1>
         {projects}
       </div>
-      {slideShowProject && <Suspense fallback={<Fallback />}><SlideShowModal projectTitle={slideShowProject} close={() => setSlideShowProject('')} /></Suspense>}
+      {slideShowProject && <Suspense fallback={<Fallback />}><SlideShowModal project={slideShowProject} close={() => setSlideShowProject(null)} /></Suspense>}
     </>
   );
 });

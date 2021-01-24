@@ -9,29 +9,32 @@ const SlideShowModal = props => {
   const [currSlide, setCurrSlide] = useState(0);
   const [gifs, setGifs] = useState([]);
 
-  useEffect(() => setGifs(allGifs[props.projectTitle]), [props.projectTitle]);
+  useEffect(() => setGifs(allGifs[props.project.title]), [props.project]);
 
   const closeHandler = e => {
     if (!containerRef.current.contains(e.target)) { props.close(); }
   };
 
   const scrollToHandler = num => {
-    const width = window.innerWidth < 500 ? window.innerWidth * .9 : 500;
+    const width = window.innerWidth < 550 ? window.innerWidth * .9 : 550;
     sliderRef.current.scrollLeft = width * num;
   };
 
   const scrollHandler = () => {
-    const width = window.innerWidth < 500 ? window.innerWidth * .9 : 500;
+    const width = window.innerWidth < 550 ? window.innerWidth * .9 : 550;
     setCurrSlide(Math.floor(sliderRef.current.scrollLeft / width));
   };
 
+  const lightenTitle = props.project.title === 'Guitar Trainer';
+
   return (
     <div className={classes.Container} onClick={closeHandler}>
+      <div className={lightenTitle ? classes.LightenTitle : classes.Title}>{props.project.titleComp}</div>
       <div className={classes.SliderContainer} ref={containerRef}>
         <div className={classes.Slider}>
           <div className={classes.Slides} ref={sliderRef} onScroll={scrollHandler}>
             {gifs.map((gif, i) => (
-              <div key={i} className={classes.Slide}><img src={gif} alt={props.projectTitle} /></div>
+              <div key={i} className={classes.Slide}><img src={gif} alt={props.project.title} /></div>
             ))}
           </div>
           <div className={classes.Dots}>
@@ -47,7 +50,7 @@ const SlideShowModal = props => {
 
 SlideShowModal.propTypes = {
   close: PropTypes.func.isRequired,
-  projectTitle: PropTypes.string.isRequired
+  project: PropTypes.object.isRequired
 };
 
 export default SlideShowModal;
