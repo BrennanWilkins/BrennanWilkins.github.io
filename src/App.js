@@ -13,8 +13,11 @@ const App = () => {
   const [startContactAnim, setStartContactAnim] = useState(false);
 
   const scrollHandler = () => {
-    if (!startSkillsAnim && window.innerHeight >= skillsRef.current.getBoundingClientRect().bottom - 40) {
-      setStartSkillsAnim(true);
+    if (!startSkillsAnim) {
+      const skillsRect = skillsRef.current.getBoundingClientRect();
+      if (window.innerHeight >= skillsRect.bottom - 40 || skillsRect.top <= 70) {
+        setStartSkillsAnim(true);
+      }
     }
     if (window.innerHeight >= contactRef.current.getBoundingClientRect().bottom - 100) {
       setStartContactAnim(true);

@@ -60,8 +60,8 @@
   align-items: center;
 }
 .Icons svg {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   color: white;
   margin: 0 5px;
   transition: 250ms;
@@ -109,5 +109,17 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+}
+@media (max-width: 400px) {
+  .Icons svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media (max-width: 360px) {
+  .Icons svg {
+    width: 26px;
+    height: 26px;
   }
 }

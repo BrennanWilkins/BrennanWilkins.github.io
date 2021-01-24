@@ -12,7 +12,8 @@ const Skills = React.forwardRef((props, ref) => (
     <div className={`${classes.Techs} ${props.startAnim ? classes.TechsAnim : ''}`}>
       {icons.map((icon, i) => (
         <div className={classes.Tech} key={i}>
-          <div className={`${classes.TechIcon} ${(i === 6 || i === 7) ? classes.TechIconStretch : ''}`} style={{ transitionDelay: String(500 + (i * 50)) + 'ms' }}>{icon[0]}</div>
+          <div className={`${classes.TechIcon} ${(i === 6 || i === 7) ? classes.TechIconStretch : ''}`}
+          style={{ transitionDelay: String(500 + (i * 50)) + 'ms' }}>{icon[0]}</div>
           <span className={classes.TechName}>{icon[1]}<span className={classes.FocusBorder}></span></span>
         </div>
       ))}
