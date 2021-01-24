@@ -66,3 +66,43 @@
   color: rgb(var(--lightBlue));
   transition: color 250ms ease-in 300ms;
 }
+.DropDown {
+  display: none;
+  height: calc(80% - 70px);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: rgba(var(--darkerBlue), 0.9);
+  z-index: 100;
+  padding-top: 10px;
+  box-sizing: border-box;
+  animation: dropIn 300ms ease forwards;
+  overflow: hidden;
+}
+@keyframes dropIn {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 160px;
+  }
+}
+.DropDown .Link {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+@media (max-width: 400px) {
+  .Link {
+    display: none;
+  }
+  .DropDown, .DropDown .Link {
+    display: block;
+  }
+  .NavBar {
+    justify-content: space-between;
+    padding: 0 10px 0 15px;
+    box-sizing: border-box;
+  }
+}
