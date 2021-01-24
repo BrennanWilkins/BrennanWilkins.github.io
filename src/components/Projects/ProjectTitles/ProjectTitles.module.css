@@ -87,6 +87,13 @@
 
 .PVNTitle {
   color: rgb(156, 69, 10);
+  text-align: center;
+}
+@media (max-width: 420px) {
+  .PVNTitle {
+    position: relative;
+    top: -20px;
+  }
 }
 
 .BreyoTitle {

@@ -1,11 +1,15 @@
 .Container {
   padding-bottom: 20px;
 }
+@media (max-width: 400px) {
+  .Container h1 {
+    font-size: 35px;
+  }
+}
 .Form {
   margin: 20px auto;
   max-width: 500px;
   width: 90%;
-  padding: 0 -5px;
 }
 .AnimateForm input, .AnimateForm textarea, .AnimateForm .SubmitBtn {
   position: relative;
@@ -33,7 +37,6 @@
   font-size: 16px;
   width: 100%;
   outline: none;
-  margin: 5px;
   box-shadow: 0 0 10px 0 rgb(35,35,35) inset;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -51,9 +54,10 @@
 }
 .InputDiv {
   position: relative;
+  margin-bottom: 5px;
 }
-.NameInput {
-  margin-right: 10px;
+.InputSection .InputDiv {
+  width: calc(50% - 2.5px);
 }
 .Form input:focus ~ .FocusBorder, .Form textarea:focus ~ .FocusBorder {
   width: 100%;
@@ -61,8 +65,8 @@
 }
 .FocusBorder {
   position: absolute;
-  bottom: 4px;
-  left: 5px;
+  bottom: 0;
+  left: 0;
   width: 0;
   height: 2px;
   background: rgb(var(--lightBlue));
@@ -77,7 +81,6 @@
   outline: none;
   padding: 10px 20px;
   font-size: 16px;
-  margin: 5px;
   background: rgb(43, 43, 43);
   cursor: pointer;
   border: 2px solid rgb(var(--lightBlue));
@@ -100,8 +103,8 @@
 }
 .ErrMsg, .HideMsg, .SuccessMsg {
   position: absolute;
-  top: 7.5px;
-  right: -5px;
+  top: 5px;
+  right: 0;
   color: white;
   font-size: 15px;
   background: rgb(184, 4, 4);

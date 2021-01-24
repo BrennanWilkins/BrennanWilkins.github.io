@@ -1,6 +1,11 @@
 .Container {
   padding: 20px 0;
 }
+@media (max-width: 400px) {
+  .Container h1 {
+    font-size: 35px;
+  }
+}
 .Techs {
   display: flex;
   justify-content: center;

@@ -4,3 +4,8 @@
 .Container h1 {
   margin-bottom: 50px;
 }
+@media (max-width: 400px) {
+  .Container h1 {
+    font-size: 35px;
+  }
+}
