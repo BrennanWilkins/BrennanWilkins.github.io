@@ -18,71 +18,13 @@
   max-height: 450px;
   width: 90%;
   height: 90%;
-}
-.Slider {
-  text-align: center;
-  overflow: hidden;
-  width: 100%;
-}
-.Slides {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-.Slides::-webkit-scrollbar {
-  height: 10px;
-}
-.Slides::-webkit-scrollbar-thumb {
-  background: rgb(196, 196, 196);
-  border-radius: 10px;
-}
-.Slides::-webkit-scrollbar-track {
-  background: transparent;
-}
-.Slides img {
-  max-width: calc(100% - 2px);
-  max-height: calc(100% - 2px);
-}
-.Slide {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  margin-right: 50px;
-  border-radius: 10px;
-  background-image: linear-gradient(to bottom, rgb(60,60,60), rgb(30,30,30));
-  transform-origin: center center;
-  transition: transform 500ms;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-.Dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-.Active, .Inactive {
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  background: rgb(196, 196, 196, 0.8);
-  margin: 0 3px;
-}
-.Active {
-  background: rgb(83, 83, 83);
 }
 .Title {
+  height: 50px;
   margin-bottom: 10px;
 }
 .LightenTitle {
-  margin-bottom: 10px;
   filter: brightness(3);
 }
 @media (max-height: 650px) {
@@ -93,8 +35,5 @@
 @media (max-height: 600px) {
   .Title, .LightenTitle {
     display: none;
-  }
-  .Slide {
-    height: calc(80vh - 80px);
   }
 }
