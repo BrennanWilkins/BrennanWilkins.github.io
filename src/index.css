@@ -7,11 +7,25 @@ body {
   overflow-y: auto;
   background-image: linear-gradient(rgb(var(--blue)), rgb(var(--darkBlue)));
 }
-h1 {
+h1, h2 {
   font-size: 40px;
   font-weight: 400;
   color: white;
   text-align: center;
+  margin: 0.67em 0;
+}
+@media (max-width: 420px) {
+  h1 {
+    font-size: 35px;
+  }
+}
+.Container {
+  padding: 20px 0;
+}
+.FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 :root {
   --lightBlue: 21, 171, 210;

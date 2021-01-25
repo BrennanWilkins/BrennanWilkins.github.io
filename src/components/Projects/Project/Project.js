@@ -6,20 +6,20 @@ import { SiteLink, GHLink } from '../ProjectLinks/ProjectLinks';
 const Project = React.forwardRef((props, ref) => {
   const projectContent = useMemo(() => (
     <>
-      <div className={classes.TopTitle}>{props.title}</div>
+      <div className={`FlexCenter ${classes.TopTitle}`}>{props.title}</div>
       <div className={classes.Img} onClick={props.toggleSlideShow}>
         <img src={props.pic} alt={props.alt} />
-        <div className={classes.Overlay}>View slide show</div>
+        <div className={`FlexCenter ${classes.Overlay}`}>View slide show</div>
       </div>
       <div className={classes.ProjectInfo}>
-        <div className={classes.Title}>{props.title}</div>
+        <div className={`FlexCenter ${classes.Title}`}>{props.title}</div>
         <div className={classes.InfoText}>
           {props.text.map((text, i) => <p key={i}>{text}</p>)}
         </div>
-        <div className={classes.Icons}>
+        <div className={`FlexCenter ${classes.Icons}`}>
           {props.icons.map((icon, i) => <span key={i}>{icon}</span>)}
         </div>
-        <div className={classes.Links}>
+        <div className={`FlexCenter ${classes.Links}`}>
           <SiteLink href={props.siteLink} />
           <GHLink href={props.ghLink} />
         </div>

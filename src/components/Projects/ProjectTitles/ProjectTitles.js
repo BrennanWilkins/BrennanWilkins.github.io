@@ -4,16 +4,16 @@ import { guitarIcon, checkIcon } from '../../icons';
 
 export const BreyoTitle = (
   <div className={`${classes.Title} ${classes.BreyoTitle}`}>
-    <div className={classes.Logo}>
-      <div className={classes.Section}>
+    <div className={`FlexCenter ${classes.Logo}`}>
+      <div className="FlexCenter">
         {checkIcon}
         <div className={classes.Block}></div>
       </div>
-      <div className={classes.Section}>
+      <div className="FlexCenter">
         {checkIcon}
         <div className={classes.Block}></div>
       </div>
-      <div className={classes.Section}>
+      <div className="FlexCenter">
         {checkIcon}
         <div className={classes.Block}></div>
       </div>

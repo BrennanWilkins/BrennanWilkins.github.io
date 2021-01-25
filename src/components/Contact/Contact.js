@@ -41,6 +41,7 @@ const Contact = React.forwardRef((props, ref) => {
     setMsg('');
     setErr(false);
     setErrMsg('');
+    setLoading(false);
   };
 
   const submitHandler = e => {
@@ -57,7 +58,6 @@ const Contact = React.forwardRef((props, ref) => {
       body: JSON.stringify(data)
     }).then(res => {
       if (!res.ok) { throw Error(res.statusText); }
-      setLoading(false);
       setSentSuccess(true);
       setTimeout(() => setSentSuccess(false), 5000);
       resetState();
@@ -69,7 +69,7 @@ const Contact = React.forwardRef((props, ref) => {
   };
 
   return (
-    <div className={classes.Container} ref={ref}>
+    <div className="Container" ref={ref}>
       <h1>Contact</h1>
       <form className={`${classes.Form} ${props.startAnim ? classes.AnimateForm : ''}`} onSubmit={submitHandler}>
         <div className={classes.InputSection}>

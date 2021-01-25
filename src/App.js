@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import TitleParticles from './components/TitleParticles/TitleParticles';
 import Skills from './components/Skills/Skills';
-import Projects from './components/Projects/Projects/Projects';
+import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 
 const App = () => {

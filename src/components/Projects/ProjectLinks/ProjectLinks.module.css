@@ -1,9 +1,6 @@
 .ProjLink {
   text-decoration: none;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 180px;
   height: 48px;
   margin: 0 10px;
@@ -48,11 +45,6 @@
 }
 .ProjLink:hover::after {
   transition-delay: 0ms, 250ms, 0ms;
-}
-.ArrowIcon, .GithubIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .ArrowIcon {
   font-size: 22px;

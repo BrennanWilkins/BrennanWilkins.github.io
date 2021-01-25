@@ -1,15 +1,4 @@
-.Container {
-  padding: 20px 0;
-}
-@media (max-width: 420px) {
-  .Container h1 {
-    font-size: 35px;
-  }
-}
 .Techs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   margin: auto;
   width: 100%;
@@ -18,9 +7,6 @@
   box-sizing: border-box;
 }
 .Tech {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   transition: transform 300ms;
 }
@@ -62,9 +48,6 @@
   position: relative;
   right: -10px;
   transition: all 250ms 500ms;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 12px;
 }
 .TechIconStretch {

@@ -35,8 +35,8 @@ const TitleParticles = props => (
   <div className={classes.Container}>
     <Particles className={classes.ParticleContainer} params={particleParams} />
     <div className={classes.TitleContainer}>
-      <h1 className={classes.Title}>Brennan Wilkins</h1>
-      <h1 className={classes.SubTitle}>Full Stack Software Developer</h1>
+      <h2 className={classes.Title}>Brennan Wilkins</h2>
+      <h2 className={classes.SubTitle}>Full Stack Software Developer</h2>
       <div className={classes.DownIcon} onClick={() => props.scroll('Skills')}>{chevronIcon}</div>
     </div>
   </div>

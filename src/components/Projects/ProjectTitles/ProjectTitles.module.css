@@ -88,17 +88,9 @@
   color: rgb(228, 67, 50);
 }
 .Logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
-.Section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Section svg {
+.BreyoTitle svg {
   font-size: 9px;
 }
 .Block {

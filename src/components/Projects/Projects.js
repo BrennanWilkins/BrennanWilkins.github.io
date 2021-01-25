@@ -1,9 +1,8 @@
 import React, { useState, Suspense, useRef, useEffect, useMemo } from 'react';
-import classes from './Projects.module.css';
-import Project from '../Project/Project';
-import projInfo from '../projectInfo';
-import Fallback from '../LoadingFallback/LoadingFallback';
-const SlideShowModal = React.lazy(() => import('../SlideShowModal/SlideShowModal'));
+import Project from './Project/Project';
+import projInfo from './projectInfo';
+import Fallback from './LoadingFallback/LoadingFallback';
+const SlideShowModal = React.lazy(() => import('./SlideShowModal/SlideShowModal'));
 
 const Projects = React.forwardRef((props, containerRef) => {
   const [slideShowProject, setSlideShowProject] = useState(null);
@@ -51,7 +50,7 @@ const Projects = React.forwardRef((props, containerRef) => {
 
   return (
     <>
-      <div ref={containerRef} className={classes.Container}>
+      <div ref={containerRef} className="Container">
         <h1>Projects</h1>
         {projects}
       </div>

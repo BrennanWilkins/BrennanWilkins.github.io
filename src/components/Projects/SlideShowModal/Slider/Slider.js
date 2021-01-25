@@ -20,10 +20,10 @@ const Slider = props => {
     <div className={classes.Slider}>
       <div className={classes.Slides} ref={sliderRef} onScroll={scrollHandler}>
         {props.gifs.map((gif, i) => (
-          <div key={i} className={classes.Slide}><img src={gif} alt={props.title} /></div>
+          <div key={i} className={`FlexCenter ${classes.Slide}`}><img src={gif} alt={props.title} /></div>
         ))}
       </div>
-      <div className={classes.Dots}>
+      <div className="FlexCenter">
         {[...Array(props.gifs.length)].map((_, i) => (
           <span key={i} onClick={() => scrollToHandler(i)} className={currSlide === i ? classes.Active : classes.Inactive}></span>
         ))}
