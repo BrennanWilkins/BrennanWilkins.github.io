@@ -15,15 +15,15 @@
   transition: background 300ms;
 }
 .SimplifyTitle:hover .Bar2 {
-  background: rgb(32, 208, 185, 0.8);
+  background: rgba(32, 208, 185, 0.8);
   transition: background 300ms 50ms;
 }
 .SimplifyTitle:hover .Bar3 {
-  background: rgb(32, 208, 185, 0.6);
+  background: rgba(32, 208, 185, 0.6);
   transition: background 300ms 100ms;
 }
 .SimplifyTitle:hover .Bar4 {
-  background: rgb(32, 208, 185, 0.4);
+  background: rgba(32, 208, 185, 0.4);
   transition: background 300ms 150ms;
 }
 .SimplifyText {
@@ -49,17 +49,17 @@
 }
 .Bar2 {
   height: 30px;
-  background: rgb(18, 152, 189, 0.8);
+  background: rgba(18, 152, 189, 0.8);
   transition: background 300ms 100ms;
 }
 .Bar3 {
   height: 40px;
-  background: rgb(18, 152, 189, 0.6);
+  background: rgba(18, 152, 189, 0.6);
   transition: background 300ms 50ms;
 }
 .Bar4 {
   height: 50px;
-  background: rgb(18, 152, 189, 0.4);
+  background: rgba(18, 152, 189, 0.4);
   transition: background 300ms;
 }
 

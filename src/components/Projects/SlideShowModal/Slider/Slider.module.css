@@ -38,15 +38,12 @@
   height: 400px;
   overflow: hidden;
 }
-.Active, .Inactive {
+.Dot {
   border-radius: 50%;
   width: 10px;
   height: 10px;
   background: rgba(196, 196, 196, 0.8);
   margin: 10px 3px 0;
-}
-.Active {
-  background: rgb(83, 83, 83);
 }
 @media (max-height: 600px) {
   .Slide {

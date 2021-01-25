@@ -34,8 +34,8 @@ const Projects = React.forwardRef((props, containerRef) => {
 
   const projects = useMemo(() => (
     projInfo.map((info, i) => (
-      <Project key={info.alt} ref={el => projRefs.current[i] = el} {...info}
-      toggleSlideShow={() => setSlideShowProject({ index: i, title: info.alt, titleComp: info.title })} startAnim={!!startAnims[i]} />
+      <Project key={info.alt} ref={el => projRefs.current[i] = el} {...info} startAnim={!!startAnims[i]}
+      toggleSlideShow={() => setSlideShowProject({ index: i, title: info.alt, titleComp: info.title })} />
     ))
   ), [startAnims]);
 

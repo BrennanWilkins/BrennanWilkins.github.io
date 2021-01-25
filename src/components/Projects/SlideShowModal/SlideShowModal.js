@@ -18,7 +18,7 @@ const SlideShowModal = props => {
   const lightenTitle = props.project.title === 'Guitar Trainer';
 
   return (
-    <div className={classes.Container} onClick={closeHandler}>
+    <div className={`Backdrop ${classes.Container}`} onClick={closeHandler}>
       <div className={`${classes.Title} ${lightenTitle ? classes.LightenTitle : ''}`}>{props.project.titleComp}</div>
       <div className={classes.SliderContainer} ref={containerRef}>
         <Slider gifs={gifs} title={props.project.title} />
