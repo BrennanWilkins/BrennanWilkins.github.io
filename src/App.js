@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import TitleParticles from './components/TitleParticles/TitleParticles';
 import Skills from './components/Skills/Skills';
@@ -7,50 +7,33 @@ import Contact from './components/Contact/Contact';
 
 const App = () => {
   const skillsRef = useRef();
-  const projRef = useRef();
+  const projsRef = useRef();
   const contactRef = useRef();
-  const [startSkillsAnim, setStartSkillsAnim] = useState(false);
-  const [startContactAnim, setStartContactAnim] = useState(false);
 
-  useEffect(() => {
-    const scrollHandler = () => {
-      setStartSkillsAnim(hasStarted => {
-        if (hasStarted) { return hasStarted; }
-        const skillsRect = skillsRef.current.getBoundingClientRect();
-        return window.innerHeight >= skillsRect.bottom - 40 || skillsRect.top <= 70;
-      });
-      if (window.innerHeight >= contactRef.current.getBoundingClientRect().bottom - 100) {
-        setStartContactAnim(true);
-        document.removeEventListener('scroll', scrollHandler);
-      }
-    };
-
-    document.addEventListener('scroll', scrollHandler);
-    return () => document.removeEventListener('scroll', scrollHandler);
-  }, []);
-
-  const manualScrollHandler = section => {
+  const scrollHandler = section => {
     switch (section) {
       case 'Skills': {
         const y = skillsRef.current.getBoundingClientRect().top + window.pageYOffset - 70;
         return window.scrollTo({ top: y, behavior: 'smooth' });
       }
       case 'Projects': {
-        const y = projRef.current.getBoundingClientRect().top + window.pageYOffset - 70;
+        const y = projsRef.current.getBoundingClientRect().top + window.pageYOffset - 70;
         return window.scrollTo({ top: y, behavior: 'smooth' });
       }
-      case 'Contact': return contactRef.current.scrollIntoView({ behavior: 'smooth' });;
-      default: return window.scrollTo({ top: 0, behavior: 'smooth' });;
+      case 'Contact': {
+        return contactRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+      default: return window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   return (
     <div>
-      <NavBar scroll={manualScrollHandler} />
-      <TitleParticles scroll={manualScrollHandler} />
-      <Skills ref={skillsRef} startAnim={startSkillsAnim} />
-      <Projects ref={projRef} />
-      <Contact ref={contactRef} startAnim={startContactAnim} />
+      <NavBar scroll={scrollHandler} />
+      <TitleParticles scroll={scrollHandler} />
+      <Skills ref={skillsRef} />
+      <Projects ref={projsRef} />
+      <Contact ref={contactRef} />
     </div>
   );
 };

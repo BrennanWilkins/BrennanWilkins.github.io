@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import classes from './Contact.module.css';
 import PropTypes from 'prop-types';
 import { validateForm } from '../../utils/validation';
+import { useAnimIntoView } from '../../utils/customHooks';
 
-const Contact = React.forwardRef(({ startAnim }, ref) => {
+const Contact = React.forwardRef((_, ref) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
@@ -12,6 +13,9 @@ const Contact = React.forwardRef(({ startAnim }, ref) => {
   const [err, setErr] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const startAnim = useAnimIntoView(ref, rect => {
+    return window.innerHeight >= rect.bottom - 100;
+  });
 
   useEffect(() => {
     if (err) { setErr(false); }
@@ -123,9 +127,5 @@ const Contact = React.forwardRef(({ startAnim }, ref) => {
     </div>
   );
 });
-
-Contact.propTypes = {
-  startAnim: PropTypes.bool.isRequired
-};
 
 export default Contact;
