@@ -1,9 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import classes from './Project.module.css';
 import PropTypes from 'prop-types';
 import { SiteLink, GHLink } from '../ProjectLinks/ProjectLinks';
+import { useAnimIntoView } from '../../../utils/customHooks';
 
-const Project = React.forwardRef((props, ref) => {
+const Project = props => {
+  const ref = useRef();
+
+  const startAnim = useAnimIntoView(ref, rect => {
+    return rect.top + rect.height / 8 <= window.innerHeight;
+  });
+
   const projectContent = useMemo(() => (
     <>
       <div className={`FlexC ${classes.TopTitle}`}>
@@ -36,12 +43,12 @@ const Project = React.forwardRef((props, ref) => {
   return (
     <div
       ref={ref}
-      className={`${classes.Project} ${props.startAnim ? classes.ProjectAnim : ''}`}
+      className={`${classes.Project} ${startAnim ? classes.ProjectAnim : ''}`}
     >
       {projectContent}
     </div>
   );
-});
+};
 
 Project.propTypes = {
   pic: PropTypes.string.isRequired,
@@ -52,7 +59,6 @@ Project.propTypes = {
   ghLink: PropTypes.string.isRequired,
   title: PropTypes.object.isRequired,
   toggleSlideShow: PropTypes.func.isRequired,
-  startAnim: PropTypes.bool.isRequired
 };
 
 export default Project;
