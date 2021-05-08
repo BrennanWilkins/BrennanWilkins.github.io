@@ -21,3 +21,18 @@ export const useAnimIntoView = (ref, isShown) => {
 
   return startAnim;
 };
+
+export const useOutsideClick = (shown, ref, close) => {
+  useEffect(() => {
+    const clickHandler = e => {
+      if (!ref.current.contains(e.target)) {
+        close();
+      }
+    };
+
+    if (shown) {
+      document.addEventListener('mouseup', clickHandler);
+    }
+    return () => document.removeEventListener('mouseup', clickHandler);
+  }, [shown]);
+}

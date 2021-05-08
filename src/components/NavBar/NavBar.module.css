@@ -66,7 +66,7 @@
   color: rgb(var(--lightBlue));
   transition: color 250ms ease-in 300ms;
 }
-.DropDown {
+.Dropdown {
   display: none;
   height: calc(80% - 70px);
   position: fixed;
@@ -75,29 +75,27 @@
   width: 100%;
   background: rgba(var(--darkerBlue), 0.9);
   z-index: 100;
-  padding-top: 10px;
   box-sizing: border-box;
-  animation: dropIn 300ms ease forwards;
   overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms ease;
 }
-@keyframes dropIn {
-  from {
-    max-height: 0;
-  }
-  to {
-    max-height: 160px;
-  }
+.ShowDropdown {
+  max-height: 160px;
 }
-.DropDown .Link {
+.Dropdown .Link {
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
-@media (max-width: 400px) {
+.Dropdown .Link:first-child {
+  margin-top: 10px;
+}
+@media (max-width: 500px) {
   .Link {
     display: none;
   }
-  .DropDown, .DropDown .Link {
+  .Dropdown, .Dropdown .Link {
     display: block;
   }
   .NavBar {

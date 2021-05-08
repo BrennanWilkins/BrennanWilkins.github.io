@@ -1,28 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import classes from './NavBar.module.css';
 import PropTypes from 'prop-types';
 import HamburgerBtn from './HamburgerBtn/HamburgerBtn';
+import { useOutsideClick } from '../../utils/customHooks';
 
 const NavBar = ({ scroll }) => {
-  const dropdownRef = useRef();
   const navbarRef = useRef();
   const [showDropdown, setShowDropdown] = useState(false);
 
-  useEffect(() => {
-    const clickHandler = e => {
-      if (
-        !dropdownRef.current.contains(e.target)
-        && !navbarRef.current.contains(e.target)
-      ) {
-        setShowDropdown(false);
-      }
-    };
-
-    if (showDropdown) {
-      document.addEventListener('mouseup', clickHandler);
-    }
-    return () => document.removeEventListener('mouseup', clickHandler);
-  }, [showDropdown]);
+  useOutsideClick(showDropdown, navbarRef, () => {
+    setShowDropdown(false);
+  });
 
   const scrollHandler = section => {
     scroll(section);
@@ -44,8 +32,8 @@ const NavBar = ({ scroll }) => {
   );
 
   return (
-    <>
-      <div className={classes.NavBar} ref={navbarRef}>
+    <div ref={navbarRef}>
+      <div className={classes.NavBar}>
         <div className={classes.NameIcon} onClick={() => scrollHandler('Home')}>
           BW
         </div>
@@ -55,12 +43,13 @@ const NavBar = ({ scroll }) => {
           onClick={() => setShowDropdown(prev => !prev)}
         />
       </div>
-      {showDropdown &&
-        <div className={classes.DropDown} ref={dropdownRef}>
-          {links}
-        </div>
-      }
-    </>
+      <div className={`
+        ${classes.Dropdown}
+        ${showDropdown ? classes.ShowDropdown : ''}
+      `}>
+        {links}
+      </div>
+    </div>
   );
 };
 
