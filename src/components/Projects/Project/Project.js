@@ -6,20 +6,26 @@ import { SiteLink, GHLink } from '../ProjectLinks/ProjectLinks';
 const Project = React.forwardRef((props, ref) => {
   const projectContent = useMemo(() => (
     <>
-      <div className={`FlexCenter ${classes.TopTitle}`}>{props.title}</div>
+      <div className={`FlexC ${classes.TopTitle}`}>
+        {props.title}
+      </div>
       <div className={classes.Img} onClick={props.toggleSlideShow}>
         <img src={props.pic} alt={props.alt} />
-        <div className={`FlexCenter ${classes.Overlay}`}>View slide show</div>
+        <div className={`FlexC ${classes.Overlay}`}>
+          View slide show
+        </div>
       </div>
       <div className={classes.ProjectInfo}>
-        <div className={`FlexCenter ${classes.Title}`}>{props.title}</div>
+        <div className={`FlexC ${classes.Title}`}>
+          {props.title}
+        </div>
         <div className={classes.InfoText}>
           {props.text.map((text, i) => <p key={i}>{text}</p>)}
         </div>
-        <div className={`FlexCenter ${classes.Icons}`}>
+        <div className={`FlexC ${classes.Icons}`}>
           {props.icons.map((icon, i) => <span key={i}>{icon}</span>)}
         </div>
-        <div className={`FlexCenter ${classes.Links}`}>
+        <div className={`FlexC ${classes.Links}`}>
           <SiteLink href={props.siteLink} />
           <GHLink href={props.ghLink} />
         </div>
@@ -28,7 +34,10 @@ const Project = React.forwardRef((props, ref) => {
   ), []);
 
   return (
-    <div ref={ref} className={`${classes.Project} ${props.startAnim ? classes.ProjectAnim : ''}`}>
+    <div
+      ref={ref}
+      className={`${classes.Project} ${props.startAnim ? classes.ProjectAnim : ''}`}
+    >
       {projectContent}
     </div>
   );

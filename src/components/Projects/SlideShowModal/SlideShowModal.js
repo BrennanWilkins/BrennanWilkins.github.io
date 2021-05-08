@@ -5,24 +5,30 @@ import allGifs from '../projectGifs';
 import ArrowBtns from './ArrowBtns/ArrowBtns';
 import Slider from './Slider/Slider';
 
-const SlideShowModal = props => {
+const SlideShowModal = ({ close, project, switchProj }) => {
   const containerRef = useRef();
   const [gifs, setGifs] = useState([]);
 
-  useEffect(() => setGifs(allGifs[props.project.title]), [props.project]);
+  useEffect(() => {
+    setGifs(allGifs[project.title]);
+  }, [project]);
 
   const closeHandler = e => {
-    if (!containerRef.current.contains(e.target)) { props.close(); }
+    if (!containerRef.current.contains(e.target)) {
+      close();
+    }
   };
 
-  const lightenTitle = props.project.title === 'Guitar Trainer';
+  const lightenTitle = project.title === 'Guitar Trainer';
 
   return (
     <div className={`Backdrop ${classes.Container}`} onClick={closeHandler}>
-      <div className={`${classes.Title} ${lightenTitle ? classes.LightenTitle : ''}`}>{props.project.titleComp}</div>
+      <div className={`${classes.Title} ${lightenTitle ? classes.LightenTitle : ''}`}>
+        {project.titleComp}
+      </div>
       <div className={classes.SliderContainer} ref={containerRef}>
-        <Slider gifs={gifs} title={props.project.title} />
-        <ArrowBtns switchProj={props.switchProj} />
+        <Slider gifs={gifs} title={project.title} />
+        <ArrowBtns switchProj={switchProj} />
       </div>
     </div>
   );

@@ -4,18 +4,18 @@ import { guitarIcon, checkIcon } from '../../icons';
 
 export const BreyoTitle = (
   <div className={`${classes.Title} ${classes.BreyoTitle}`}>
-    <div className={`FlexCenter ${classes.Logo}`}>
-      <div className="FlexCenter">
+    <div className={`FlexC ${classes.Logo}`}>
+      <div className="FlexC">
         {checkIcon}
-        <div className={classes.Block}></div>
+        <div className={classes.Block} />
       </div>
-      <div className="FlexCenter">
+      <div className="FlexC">
         {checkIcon}
-        <div className={classes.Block}></div>
+        <div className={classes.Block} />
       </div>
-      <div className="FlexCenter">
+      <div className="FlexC">
         {checkIcon}
-        <div className={classes.Block}></div>
+        <div className={classes.Block} />
       </div>
     </div>
     Breyo
@@ -25,10 +25,10 @@ export const BreyoTitle = (
 export const SimplifyTitle = (
   <div className={`${classes.Title} ${classes.SimplifyTitle}`}>
     <div className={classes.Bars}>
-      <div className={classes.Bar1}></div>
-      <div className={classes.Bar2}></div>
-      <div className={classes.Bar3}></div>
-      <div className={classes.Bar4}></div>
+      <div className={classes.Bar1} />
+      <div className={classes.Bar2} />
+      <div className={classes.Bar3} />
+      <div className={classes.Bar4} />
     </div>
     <div className={classes.SimplifyText}>Simplify</div>
   </div>
@@ -41,6 +41,14 @@ export const GuitarTitle = (
   </div>
 );
 
-export const NotelyTitle = <div className={`${classes.Title} ${classes.NotelyTitle}`}>Notely</div>;
+export const NotelyTitle = (
+  <div className={`${classes.Title} ${classes.NotelyTitle}`}>
+    Notely
+  </div>
+);
 
-export const PVNTitle = <div className={`${classes.Title} ${classes.PVNTitle}`}>Pirates vs Ninjas Strategy Game</div>;
+export const PVNTitle = (
+  <div className={`${classes.Title} ${classes.PVNTitle}`}>
+    Pirates vs Ninjas Strategy Game
+  </div>
+);

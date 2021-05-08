@@ -34,18 +34,33 @@ const Projects = React.forwardRef((props, containerRef) => {
 
   const projects = useMemo(() => (
     projInfo.map((info, i) => (
-      <Project key={info.alt} ref={el => projRefs.current[i] = el} {...info} startAnim={!!startAnims[i]}
-      toggleSlideShow={() => setSlideShowProject({ index: i, title: info.alt, titleComp: info.title })} />
+      <Project
+        key={info.alt}
+        ref={el => projRefs.current[i] = el}
+        {...info}
+        startAnim={!!startAnims[i]}
+        toggleSlideShow={() => setSlideShowProject({
+          index: i,
+          title: info.alt,
+          titleComp: info.title
+        })}
+      />
     ))
   ), [startAnims]);
 
   const switchHandler = showNext => {
     const currIndex = slideShowProject.index;
     const maxIndex = projRefs.current.length - 1;
-    // if showing next & at end of projects then show first one else show next one
-    // if showing prev & at beginning of projects then show last one else show prev one
-    const index = showNext ? (currIndex === maxIndex ? 0 : currIndex + 1) : (!currIndex ? maxIndex : currIndex - 1);
-    setSlideShowProject({ index, title: projInfo[index].alt, titleComp: projInfo[index].title });
+    const index = (
+      showNext ?
+      (currIndex === maxIndex ? 0 : currIndex + 1) :
+      (!currIndex ? maxIndex : currIndex - 1)
+    );
+    setSlideShowProject({
+      index,
+      title: projInfo[index].alt,
+      titleComp: projInfo[index].title
+    });
   };
 
   return (
@@ -56,7 +71,11 @@ const Projects = React.forwardRef((props, containerRef) => {
       </div>
       {slideShowProject &&
         <Suspense fallback={<Fallback />}>
-          <SlideShowModal project={slideShowProject} close={() => setSlideShowProject(null)} switchProj={switchHandler} />
+          <SlideShowModal
+            project={slideShowProject}
+            close={() => setSlideShowProject(null)}
+            switchProj={switchHandler}
+          />
         </Suspense>
       }
     </>

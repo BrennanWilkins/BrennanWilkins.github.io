@@ -40,18 +40,19 @@
   padding: 10px 20px;
   resize: vertical;
 }
-.InputSection {
+.FormRow {
   display: flex;
   justify-content: space-between;
 }
-.InputDiv {
+.Input {
   position: relative;
   margin-bottom: 5px;
 }
-.InputSection .InputDiv {
+.FormRow .Input {
   width: calc(50% - 2.5px);
 }
-.Form input:focus ~ .FocusBorder, .Form textarea:focus ~ .FocusBorder {
+.Form input:focus ~ .FocusBorder,
+.Form textarea:focus ~ .FocusBorder {
   width: 100%;
   opacity: 1;
 }

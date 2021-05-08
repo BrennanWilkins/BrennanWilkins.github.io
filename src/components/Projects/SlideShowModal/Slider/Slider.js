@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import classes from './Slider.module.css';
 import PropTypes from 'prop-types';
 
-const Slider = props => {
+const Slider = ({ gifs, title }) => {
   const sliderRef = useRef();
   const [currSlide, setCurrSlide] = useState(0);
 
@@ -18,17 +18,25 @@ const Slider = props => {
 
   return (
     <div className={classes.Slider}>
-      <div className={classes.Slides} ref={sliderRef} onScroll={scrollHandler}>
-        {props.gifs.map((gif, i) => (
-          <div key={i} className={`FlexCenter ${classes.Slide}`}>
-            <img src={gif} alt={props.title} />
+      <div
+        className={classes.Slides}
+        ref={sliderRef}
+        onScroll={scrollHandler}
+      >
+        {gifs.map((gif, i) => (
+          <div key={i} className={`FlexC ${classes.Slide}`}>
+            <img src={gif} alt={title} />
           </div>
         ))}
       </div>
-      <div className="FlexCenter">
-        {[...Array(props.gifs.length)].map((_, i) => (
-          <span key={i} style={currSlide === i ? {background: '#535353'} : null}
-          onClick={() => scrollToHandler(i)} className={classes.Dot}></span>
+      <div className="FlexC">
+        {[...Array(gifs.length)].map((_, i) => (
+          <span
+            key={i}
+            style={currSlide === i ? {background: '#535353'} : null}
+            onClick={() => scrollToHandler(i)}
+            className={classes.Dot}
+          />
         ))}
       </div>
     </div>
