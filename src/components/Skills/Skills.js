@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './Skills.module.css';
-import PropTypes from 'prop-types';
 import { allTechIcons } from '../icons';
 import { useAnimIntoView } from '../../utils/customHooks';
 

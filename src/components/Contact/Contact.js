@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import classes from './Contact.module.css';
-import PropTypes from 'prop-types';
 import { validateForm } from '../../utils/validation';
 import { useAnimIntoView } from '../../utils/customHooks';
 
