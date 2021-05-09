@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.77bf52ae.chunk.css",
-    "main.js": "/static/js/main.3bcb8a56.chunk.js",
-    "main.js.map": "/static/js/main.3bcb8a56.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.03fee624.js",
-    "runtime-main.js.map": "/static/js/runtime-main.03fee624.js.map",
-    "static/js/2.bb6b530d.chunk.js": "/static/js/2.bb6b530d.chunk.js",
-    "static/js/2.bb6b530d.chunk.js.map": "/static/js/2.bb6b530d.chunk.js.map",
+    "main.css": "/static/css/main.a4d35bb7.chunk.css",
+    "main.js": "/static/js/main.09cfbd13.chunk.js",
+    "main.js.map": "/static/js/main.09cfbd13.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7eac8954.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7eac8954.js.map",
+    "static/js/2.77775d33.chunk.js": "/static/js/2.77775d33.chunk.js",
+    "static/js/2.77775d33.chunk.js.map": "/static/js/2.77775d33.chunk.js.map",
     "static/css/3.64133ecc.chunk.css": "/static/css/3.64133ecc.chunk.css",
-    "static/js/3.1dc7aa24.chunk.js": "/static/js/3.1dc7aa24.chunk.js",
-    "static/js/3.1dc7aa24.chunk.js.map": "/static/js/3.1dc7aa24.chunk.js.map",
+    "static/js/3.a3a86a70.chunk.js": "/static/js/3.a3a86a70.chunk.js",
+    "static/js/3.a3a86a70.chunk.js.map": "/static/js/3.a3a86a70.chunk.js.map",
     "index.html": "/index.html",
     "static/css/3.64133ecc.chunk.css.map": "/static/css/3.64133ecc.chunk.css.map",
-    "static/css/main.77bf52ae.chunk.css.map": "/static/css/main.77bf52ae.chunk.css.map",
-    "static/js/2.bb6b530d.chunk.js.LICENSE.txt": "/static/js/2.bb6b530d.chunk.js.LICENSE.txt",
+    "static/css/main.a4d35bb7.chunk.css.map": "/static/css/main.a4d35bb7.chunk.css.map",
+    "static/js/2.77775d33.chunk.js.LICENSE.txt": "/static/js/2.77775d33.chunk.js.LICENSE.txt",
     "static/media/breyoGif1.8cb1761d.gif": "/static/media/breyoGif1.8cb1761d.gif",
     "static/media/breyoGif2.251639bd.gif": "/static/media/breyoGif2.251639bd.gif",
     "static/media/breyoGif3.f48b1ea1.gif": "/static/media/breyoGif3.f48b1ea1.gif",
@@ -37,9 +37,9 @@
     "static/media/simplifyPic.16f71fc9.png": "/static/media/simplifyPic.16f71fc9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.03fee624.js",
-    "static/js/2.bb6b530d.chunk.js",
-    "static/css/main.77bf52ae.chunk.css",
-    "static/js/main.3bcb8a56.chunk.js"
+    "static/js/runtime-main.7eac8954.js",
+    "static/js/2.77775d33.chunk.js",
+    "static/css/main.a4d35bb7.chunk.css",
+    "static/js/main.09cfbd13.chunk.js"
   ]
 }
