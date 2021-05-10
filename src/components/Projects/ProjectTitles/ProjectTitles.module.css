@@ -78,6 +78,11 @@
 .NotelyTitle {
   color: rgb(104, 136, 252);
 }
+.NotelyTitle svg {
+  font-size: 30px;
+  min-width: 30px;
+  margin-right: 5px;
+}
 
 .PVNTitle {
   color: rgb(156, 69, 10);
@@ -92,6 +97,7 @@
 }
 .BreyoTitle svg {
   font-size: 9px;
+  min-width: 9px;
 }
 .Block {
   border: 1.2px solid rgb(228, 67, 50);

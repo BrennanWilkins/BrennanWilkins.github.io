@@ -17,11 +17,11 @@ const breyo = {
     mongoDBIcon
   ],
   text: [
-    `Provides kanban-style boards, lists, and cards to manage you or your team's workflow and tasks, with the UI/UX inspired by Trello.`,
-    `Offers features like tracking of board member activity, member permissions and admins, Gantt charts, and more.`,
-    'Utilizes socket.IO to send real-time updates to other users connected to the same board.',
-    'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
-    'RESTful API created using Node.js and MongoDB.'
+    `Provides kanban-style boards, lists, and cards to manage you or your team's workflow and tasks, with the UI/UX inspired by Trello`,
+    `Offers features like tracking of board member activity, member permissions and admins, Gantt charts, and more`,
+    'Utilizes socket.IO to send real-time updates to other users connected to the same board',
+    'Front end built with React, with React Router used to create multi-page functionality and Redux for state management',
+    'RESTful API created using Node.js and MongoDB'
   ],
   siteLink: 'https://breyo.herokuapp.com',
   ghLink: 'https://github.com/BrennanWilkins/breyo',
@@ -40,10 +40,10 @@ const simplify = {
     mongoDBIcon
   ],
   text: [
-    'Helps users organize and simplify their finances by tracking their budget, goals, investments, and net worth, and providing financial visualization tools.',
-    'Combines data from 5+ APIs to provide real-time stock and cryptocurrency prices, financial news, stock analyses, and historical data.',
-    'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
-    'RESTful API created using Node.js and MongoDB.'
+    'Helps users organize and simplify their finances by tracking their budget, goals, investments, and net worth, and providing financial visualization tools',
+    'Combines data from 5+ APIs to provide real-time stock and cryptocurrency prices, financial news, stock analyses, and historical data',
+    'Front end built with React, with React Router used to create multi-page functionality and Redux for state management',
+    'RESTful API created using Node.js and MongoDB'
   ],
   siteLink: 'https://www.simplify-finance.com',
   ghLink: 'https://github.com/BrennanWilkins/Simplify',
@@ -64,8 +64,8 @@ const guitarTrainer = {
   text: [
     'Helps you learn guitar with three game modes designed to improve note, chord, and interval identification',
     'Provides customized practice and daily goals based on your tracked stats',
-    'Front end built with React, with React Router used to create multi-page functionality and Redux for state management.',
-    'RESTful API created using Node.js and MongoDB.'
+    'Front end built with React, with React Router used to create multi-page functionality and Redux for state management',
+    'RESTful API created using Node.js and MongoDB'
   ],
   siteLink: 'https://guitar-trainer.herokuapp.com',
   ghLink: 'https://github.com/BrennanWilkins/guitarTrainer',
@@ -80,16 +80,18 @@ const notely = {
     cssIcon,
     reactIcon,
     reduxIcon,
+    socketIOIcon,
     nodeJSIcon,
     mongoDBIcon
   ],
   text: [
-    'Note taking and productivity app inspired by Evernote',
-    'Tracks your notes and notebooks, with searching/sorting, several productivity tools, and a rich text editor',
-    'Front end built with React, with a RESTful API created using Node.js/MongoDB.'
+    'A collaborative rich note-taking app built with React/Redux, Node.js, and MongoDB',
+    'Allows users to easily invite others to collaborate on a note, utilizing WebSockets to sync note edits and cursors between collaborators',
+    'Simple and responsive UI with note shortcuts, tags, text search, rich text editing using Slate.js, and a customizable editor with dark mode',
+    'Allows users to publish their notes with a unique link for others to view it',
   ],
   siteLink: 'https://notely-app.herokuapp.com',
-  ghLink: 'https://github.com/BrennanWilkins/Notely',
+  ghLink: 'https://github.com/BrennanWilkins/Notely2.0',
   title: titles.NotelyTitle,
   pic: notelyPic,
   alt: 'Notely'
@@ -114,6 +116,6 @@ const pvn = {
   alt: 'PvN Strategy Game'
 };
 
-const projects = [breyo, simplify, guitarTrainer, notely, pvn];
+const projects = [breyo, notely, simplify, guitarTrainer, pvn];
 
 export default projects;

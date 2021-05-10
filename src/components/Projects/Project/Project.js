@@ -13,9 +13,6 @@ const Project = props => {
 
   const projectContent = useMemo(() => (
     <>
-      <div className={`FlexC ${classes.TopTitle}`}>
-        {props.title}
-      </div>
       <div className={classes.Img} onClick={props.toggleSlideShow}>
         <img src={props.pic} alt={props.alt} />
         <div className={`FlexC ${classes.Overlay}`}>

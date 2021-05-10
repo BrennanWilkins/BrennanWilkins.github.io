@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './ProjectTitles.module.css';
-import { guitarIcon, checkIcon } from '../../icons';
+import { guitarIcon, checkIcon, notelyIcon } from '../../icons';
 
 export const BreyoTitle = (
   <div className={`${classes.Title} ${classes.BreyoTitle}`}>
@@ -43,6 +43,7 @@ export const GuitarTitle = (
 
 export const NotelyTitle = (
   <div className={`${classes.Title} ${classes.NotelyTitle}`}>
+    {notelyIcon}
     Notely
   </div>
 );
